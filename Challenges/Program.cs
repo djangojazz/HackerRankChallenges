@@ -1,4 +1,5 @@
 ﻿using Challenges;
 
 //Fibonacci.FibonacciAtindexRecursive(12);
-Larrys_Array.Run(null);
+//Larrys_Array.Run(null);
+DynamicArray.Run();
