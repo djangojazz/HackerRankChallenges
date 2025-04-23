@@ -4,30 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Challenges
+namespace Challenges.Arrays
 {
     internal class GradingStudents
     {
         internal static List<int> gradingStudents(List<int> grades) =>
-            grades.Select(x => {
+            grades.Select(x =>
+            {
 
-                    if (x >= 38)
-                    {
-                        var div = (int)(x / 5);
-                        var next = 5 * (div + 1);
-                        var diff = next - x;
-                        x = diff < 3 ? next : x;
-                    }
+                if (x >= 38)
+                {
+                    var div = x / 5;
+                    var next = 5 * (div + 1);
+                    var diff = next - x;
+                    x = diff < 3 ? next : x;
+                }
 
-                    return x;
-                }).ToList();
+                return x;
+            }).ToList();
 
         internal static void Run(List<int> grades)
         {
             int gradesCount = grades.Count;
 
 
-            for (int i = 0; i<gradesCount; i++)
+            for (int i = 0; i < gradesCount; i++)
             {
                 int gradesItem = Convert.ToInt32(Console.ReadLine().Trim());
                 grades.Add(gradesItem);
@@ -35,7 +36,7 @@ namespace Challenges
 
             List<int> result = gradingStudents(grades);
 
-            Console.WriteLine(String.Join("\n", result));
+            Console.WriteLine(string.Join("\n", result));
         }
 
     }

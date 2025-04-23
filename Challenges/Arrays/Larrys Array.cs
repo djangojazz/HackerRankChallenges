@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Challenges
+namespace Challenges.Arrays
 {
     internal class Larrys_Array
     {
         public static string LarrysArray(List<int> A)
         {
             int count = 0;
-            for(int i = 0; i < A.Count - 1; i++)
+            for (int i = 0; i < A.Count - 1; i++)
             {
                 for (int j = i + 1; j < A.Count; j++)
                 {
@@ -24,11 +24,11 @@ namespace Challenges
                 }
             }
 
-            return (count % 2 == 0) ? "YES" : "NO";
+            return count % 2 == 0 ? "YES" : "NO";
         }
 
         public static List<int> RotateList(List<int> list) => new List<int> { list[1], list[2], list[0] }.Concat(list.Skip(3)).ToList();
-        public static bool CheckThree(List<int> list) => list[0] + 1 == list[1] && list[1] +1 == list[2];
+        public static bool CheckThree(List<int> list) => list[0] + 1 == list[1] && list[1] + 1 == list[2];
 
         public static (string, List<int>) RotateAndCheck(List<int> list)
         {
@@ -75,7 +75,7 @@ NO
                 Console.WriteLine($"Base: {string.Join(",", inputs[i])}");
                 var inorder = inputs[i].OrderBy(x => x).ToList();
                 //Console.WriteLine($"Inorder: {string.Join(",", inorder)}");
-             
+
                 string result = LarrysArray(inputs[i]);
                 Console.WriteLine(result);
             }

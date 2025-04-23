@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Challenges
+namespace Challenges.LinkedListChallenges
 {
     internal class LinkedListsRemovingDupes
     {
@@ -33,7 +33,7 @@ namespace Challenges
                     llist.data = llist.next.data;
                 }
 
-                
+
                 if (llist.data == llist.next.data)
                 {
                     llist.next = llist?.next?.next ?? null;

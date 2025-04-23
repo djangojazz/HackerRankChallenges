@@ -1,6 +1,6 @@
-﻿namespace Challenges
+﻿namespace Challenges.LinkedListChallenges
 {
-    internal class InsertDataAtTail
+    internal class InsertDataAtHead
     {
         class SinglyLinkedListNode
         {
@@ -9,8 +9,8 @@
 
             public SinglyLinkedListNode(int nodeData)
             {
-                this.data = nodeData;
-                this.next = null;
+                data = nodeData;
+                next = null;
             }
         }
 
@@ -20,7 +20,7 @@
 
             public SinglyLinkedList()
             {
-                this.head = null;
+                head = null;
             }
 
         }
@@ -39,16 +39,22 @@
             }
         }
 
-        static SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data)
+        static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data, SinglyLinkedListNode prev = null)
         {
-            if (head?.data == null)
-                head = new SinglyLinkedListNode(data);
-            else if (head.next == null)
-                head.next = new SinglyLinkedListNode(data);
-            else if (head?.next != null)
-                insertNodeAtTail(head.next, data);
+            var node = new SinglyLinkedListNode(data);
 
-            return head ?? new SinglyLinkedListNode(0);
+            if (prev != null) //Already have a node incoming
+            {
+                node.next = llist;
+                prev.next = node;
+            }
+            else if (llist != null) //new head
+            {
+                node = new SinglyLinkedListNode(data);
+                node.next = llist; //link the new head to the previous head
+            }
+
+            return node ?? new SinglyLinkedListNode(0);
         }
 
 
@@ -63,7 +69,7 @@
 
             for (int i = 0; i < llistCount; i++)
             {
-                SinglyLinkedListNode llist_head = insertNodeAtTail(llist.head, listing[i]);
+                SinglyLinkedListNode llist_head = insertNodeAtHead(llist.head, listing[i]);
                 llist.head = llist_head;
             }
 

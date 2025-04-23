@@ -1,4 +1,4 @@
-﻿using Challenges;
+﻿using Challenges.LinkedListChallenges;
 
 //Fibonacci.FibonacciAtindexRecursive(12);
 //Larrys_Array.Run(null);
@@ -16,11 +16,14 @@
 //};
 //ArrayManipulation.Run(n, queries);
 
-int t = 1;
-int n = 5;
-int[] m = new int[] { 1, 2, 2, 3, 4 };
+//int t = 1;
+//int n = 5;
+//int[] m = new int[] { 1, 2, 2, 3, 4 };
 
-int t2 = 1;
-int n2 = 6;
-int[] m2 = new int[] { 3, 3, 3, 4, 5, 5 };
-LinkedListsRemovingDupes.Run(t2, n2, m2);
+//int t2 = 1;
+//int n2 = 6;
+//int[] m2 = new int[] { 3, 3, 3, 4, 5, 5 };
+//LinkedListsRemovingDupes.Run(t2, n2, m2);
+
+var argsForPositionFromTail = new string[] { "2", "1", "1", "0", "3", "3", "2", "1", "2" };
+PositionFromTailLinkedList.Run(argsForPositionFromTail);

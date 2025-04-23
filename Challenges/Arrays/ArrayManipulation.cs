@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Challenges
+namespace Challenges.Arrays
 {
     internal class ArrayManipulation
     {
@@ -22,13 +22,11 @@ namespace Challenges
                 for (int j = 1; j <= n; j++)
                 {
                     //If the value is in the range of a and b, add k to it
-                    if (j >= a && j <= b)                    
+                    if (j >= a && j <= b)
                         list[j - 1] += k;  //Update the list at the associated index
                 }
 
             }
-
-
 
             return list.OrderByDescending(x => x).FirstOrDefault();
         }
