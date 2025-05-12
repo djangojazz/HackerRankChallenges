@@ -1,4 +1,5 @@
-﻿using Challenges.Heap;
+﻿using Challenges.Arrays;
+using Challenges.Heap;
 using Challenges.Helpers;
 using Challenges.LinkedListChallenges;
 using Challenges.Stacks;
@@ -41,9 +42,10 @@ using Challenges.Stacks;
 //var treeNode = CreateTreeStructureFromArrayOnly.CreateTree(intsForTree);
 //Console.WriteLine(treeNode.Id);
 
-var intsForCookies = new List<int> { 13, 47, 74, 12, 89, 74, 18, 38 };
-var k = 90;
-var result = CookiesSweet.Run(k, intsForCookies);
-Console.WriteLine(result);
+//var intsForCookies = new List<int> { 13, 47, 74, 12, 89, 74, 18, 38 };
+//var k = 90;
+//var result = CookiesSweet.Run(k, intsForCookies);
+//Console.WriteLine(result);
 
-//5
+var found = FindRepeatingPairs.Run(new string[] { "door", "backdoor", "bye", "backend", "doorbell", "goodbye" });
+Console.WriteLine(found);

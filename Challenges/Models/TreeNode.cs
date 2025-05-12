@@ -19,5 +19,7 @@ namespace Challenges.Models
 
             var node = new NodeTree { Id = id, Level = level };
         }
+
+        public void AddALevel(int x) => Level += x;
     }
 }
